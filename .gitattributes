@@ -1,0 +1,14 @@
+# 统一换行符，避免在 Windows 编辑、在 Linux 上自动发布时出现差异
+* text=auto eol=lf
+
+# 以下是二进制文件，不做换行符转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.mp3 binary

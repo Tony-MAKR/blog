@@ -1,0 +1,120 @@
+# Hexo 网站主配置
+# 官方文档: https://hexo.io/zh-cn/docs/configuration
+
+# 网站信息（这些内容会显示在网站标题栏、浏览器标签页和搜索引擎结果里）
+title: L的博客
+subtitle: ''
+description: 生活随笔与技术笔记
+keywords:
+author: L
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# 网址（上线后的实际地址）
+url: https://tony-makr.github.io/
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# 目录
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+# 这些文件原样复制到网站里，不做任何解析
+# 说明：第三方库文件（如图表库）内部含有类似 "---" 的分隔线，
+#       Hexo 会误以为是配置文件的标记而去解析它，导致生成失败。
+#       lib 文件夹里放的都是现成的第三方文件，直接复制即可。
+skip_render:
+  - 'lib/**'
+
+# 写作
+new_post_name: :title.md # 新文章的文件名格式
+default_layout: post
+titlecase: false # 是否把标题转为首字母大写
+external_link:
+  enable: true # 外部链接在新标签页打开
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: true # 主题要求开启（代码高亮的样式由主题提供）
+prismjs:
+  preprocess: false
+  line_number: false
+  tab_replace: ''
+
+# 首页设置
+index_generator:
+  path: ''
+  per_page: 10 # 首页每页显示几篇文章
+  order_by: -date
+
+# 分类与标签
+default_category: uncategorized
+category_map:
+tag_map:
+
+# 元数据
+meta_generator: true
+
+# 日期格式
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'date' # 显示你手动填写的更新时间（'mtime' 会随文件修改时间变动）
+
+# 分页
+per_page: 10
+pagination_dir: page
+
+# 订阅（RSS）：别人可以用阅读器订阅你的更新，自动收到新文章
+# 生成的文件地址是 你的网站/atom.xml
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20 # 订阅里保留最近 20 篇
+  content: true # 订阅里包含文章全文
+  autodiscovery: true # 让阅读器能自动发现订阅地址
+
+# 搜索引擎地图：帮 Google、必应等搜索引擎找到你所有的文章
+# 生成的文件地址是 你的网站/sitemap.xml
+sitemap:
+  path: sitemap.xml
+  tags: true
+  categories: true
+
+# 包含/排除文件
+include:
+exclude:
+ignore:
+
+# 数学公式（配合主题配置里的 mathjax 使用）
+# 让 $公式$ 和 $$公式$$ 能正确显示，不被当成普通文字
+mathjax:
+  tags: none # 公式编号，可选 none / ams / all
+  single_dollars: true # 支持单美元符号 $公式$
+  cjk_width: 0.9
+  normal_width: 0.6
+  append_css: true
+  every_page: true # 所有页面都自动处理公式，写文章时不需要额外设置
+
+# 主题
+theme: arknights
+
+# 部署（由 GitHub Actions 自动完成，这里保持为空）
+deploy:
+  type: ''

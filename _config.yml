@@ -11,7 +11,10 @@ language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # 网址（上线后的实际地址）
-url: https://tony-makr.github.io/
+url: https://tony-makr.github.io/blog/
+# 网站所在目录。因为网址带 /blog/ 这一层，这里必须一致，
+# 否则网站打开后样式、图片会加载不出来。
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

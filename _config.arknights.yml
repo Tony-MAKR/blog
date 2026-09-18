@@ -100,10 +100,12 @@ bgm:
   loop: true
   src: /audio/bgm.mp3
 
-# Vercount
+# Vercount 访问统计
 # 详见 https://vercount.one/
+# 开启后：侧边栏显示全站访问量与访客数，每篇文章显示阅读次数。
+# 国内服务，无需注册账号，不收集个人信息。
 vercount:
-  enable: false
+  enable: true
   sitePV: true # 站点总访问量
   siteUV: true # 站点访客数
   pagePV: true # 页面访问量
@@ -157,14 +159,15 @@ utterances:
   issue_term: pathname # 可选值: pathname | url | title | og:title
   theme: github-light # 可选值: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
 
-# Giscus
+# Giscus 文章评论
 # 详见: https://giscus.app
+# 读者用 GitHub 账号在文章下方留言，留言数据保存在本仓库的 Discussions 里。
 giscus:
-  enable: false
-  repo: # Github 仓库所有者和名称，例如: octocat/Hello-World
-  repo_id: # 仓库 ID，可在 giscus 页面获取
-  category: # discussion 分类名称
-  category_id: # 分类 ID，可在 giscus 页面获取
+  enable: true
+  repo: Tony-MAKR/blog # 仓库名（留言就存在这里）
+  repo_id: R_kgDOUdg3Iw # 仓库编号
+  category: Announcements # 留言存放的分类
+  category_id: DIC_kwDOUdg3I84DF4sr # 分类编号
   mapping: pathname # 页面 ↔️ discussion 映射关系，可选值: pathname | url | title | og:title | specific | number
   term: # 当 mapping 为 specific 时使用，指定的字符串
   discussion_number: # 当 mapping 为 number 时使用，指定的 discussion 号码
@@ -190,7 +193,10 @@ giscus:
   
   # 高级配置选项
   description: # 自定义 discussion 描述
-  origin: # 限制域名，用于安全控制
+  # 安全设置：只允许下列地址使用评论框。
+  # 第一个是网站正式地址，第二个是本地预览地址（不带它本地就看不到评论框）。
+  # 以后若换了域名，这里要跟着改。
+  origin: https://tony-makr.github.io,http://localhost:4000
   backlink: # 自定义返回链接，用于 giscus:backlink meta 标签
 
 # 图表支持（流程图、时序图等）

@@ -222,8 +222,13 @@ mathjax:
 
 # 在 `<head>` 标签内引入 CSS 样式表
 # 支持直接引入短片段，用 "{ }" 包裹（包括引号），例： - "{a {color: #2bf}}"
+# 注意：这里的地址会原样写入网页，必须带 /blog/ 前缀（网站地址里有这一层）
 stylesheets:
+  - /blog/lib/aplayer/APlayer.min.css
+  - /blog/css/aplayer-custom.css
 
 # 在 `<body>` 尾部引入 JavaScript 脚本
 # 支持直接引入短片段，用 "{ }" 包裹（包括引号），例： - "{var test='test'}"
 scripts:
+  - /blog/lib/aplayer/APlayer.min.js
+  - /blog/js/aplayer-init.js

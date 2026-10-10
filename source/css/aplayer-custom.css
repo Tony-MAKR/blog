@@ -1,0 +1,61 @@
+/* =========================================================
+ * 背景音乐播放器的外观调整
+ *
+ * 1. 深色模式下把播放器改成深色，和网站整体配色一致
+ * 2. 手机屏幕上把右下角的按钮（回顶/目录/换色）抬高，
+ *    避免被展开的播放器挡住
+ * ========================================================= */
+
+/* 收起的小方块：圆角 + 上方阴影 */
+.aplayer.aplayer-fixed {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- 深色模式（网站默认就是深色）---------- */
+:root[theme-mode=dark] .aplayer,
+:root[theme-mode=dark] .aplayer.aplayer-fixed .aplayer-body {
+  background: rgba(20, 21, 22, 0.95);
+}
+:root[theme-mode=dark] .aplayer.aplayer-fixed .aplayer-info {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+:root[theme-mode=dark] .aplayer .aplayer-title {
+  color: #ffffff;
+}
+:root[theme-mode=dark] .aplayer .aplayer-author,
+:root[theme-mode=dark] .aplayer .aplayer-time,
+:root[theme-mode=dark] .aplayer-list ol li .aplayer-list-index,
+:root[theme-mode=dark] .aplayer-list ol li .aplayer-list-author {
+  color: #c4c4c4;
+}
+:root[theme-mode=dark] .aplayer.aplayer-fixed .aplayer-list {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(20, 21, 22, 0.95);
+}
+:root[theme-mode=dark] .aplayer-list ol li {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+:root[theme-mode=dark] .aplayer-list ol li:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+:root[theme-mode=dark] .aplayer-list ol li.aplayer-list-light {
+  background: rgba(255, 255, 255, 0.12);
+}
+:root[theme-mode=dark] .aplayer .aplayer-time .aplayer-icon path,
+:root[theme-mode=dark] .aplayer .aplayer-miniswitcher .aplayer-icon path {
+  fill: #c4c4c4;
+}
+:root[theme-mode=dark] .aplayer .aplayer-miniswitcher {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- 手机屏幕 ----------
+ * 右下角按钮列默认贴着底部；播放器展开后高约 66px，
+ * 把按钮列整体抬高 74px（播放器高度 + 一点间距）。
+ */
+@media (max-width: 768px) {
+  .bottom-btn div {
+    bottom: 74px;
+  }
+}

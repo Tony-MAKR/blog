@@ -1128,6 +1128,12 @@ class MonacoEditor {
         this.updateEditorLayout();
     };
     loadMonaco = () => {
+        // 【本项目改动】只有页面里真的用到代码编辑器时才加载。
+        // 原因：Monaco 体积很大（数 MB），且它自带的 AMD 加载器会占用 define，
+        // 导致其他库（如 APlayer）无法正常导出。原本是每页都加载。
+        if (document.querySelectorAll('.monaco-editor-code').length === 0) {
+            return;
+        }
         if (typeof window.hexo_monaco === 'undefined') {
             const loader = document.createElement('script');
             loader.src = 'https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js';

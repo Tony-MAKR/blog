@@ -29,7 +29,9 @@ menu:
 # 侧边栏
 aside:
   in_left: false # 侧边栏在左 true / false
-  logo: https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png #图片链接，建议 1:1 比例
+  # 侧边栏头像（建议正方形）。图片放在 source/img/ 里。
+  # 注意：这个地址会原样写入网页，必须带 /blog/ 前缀（与文章里的图片写法不同）。
+  logo: /blog/img/avatar.jpg
   logo_margin: 0 # 为 Logo 图片设置 CSS margin 属性值，参考：https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin
   logo_border_radius: 0 # 为 Logo 图片设置 CSS border-radius 属性值，参考：https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius
   # 侧边栏博主名点击后跳转的地址
